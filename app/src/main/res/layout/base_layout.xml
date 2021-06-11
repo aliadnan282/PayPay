@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ViewStub
+        android:id="@+id/base_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ViewStub
+            android:id="@+id/base_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:inflatedId="@+id/main_error"
+            android:visibility="invisible" />
+
+        <ViewStub
+            android:id="@+id/base_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <ViewStub
+            android:id="@+id/base_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:inflatedId="@+id/main_empty"
+            android:layout="@layout/base_empty"
+            android:visibility="invisible" />
+
+        <ViewStub
+            android:id="@+id/base_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inflatedId="@+id/main_loading"
+            android:layout="@layout/base_loading" />
+
+        <ViewStub
+            android:id="@+id/base_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inflatedId="@+id/main_connection"
+            android:layout="@layout/base_no_connection" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

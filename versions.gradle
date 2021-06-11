@@ -1,6 +1,6 @@
 ext {
     // Sdk
-    minSdk = 30
+    minSdkV = 21
     targetSdk = 30
     compileSdkV = 30
     buildTools = '30.0.3'

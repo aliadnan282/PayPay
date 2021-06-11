@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_error"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/error_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_no_data_found" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_error_generic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_internet_connection"
+        android:textAlignment="center"
+        android:textSize="@dimen/dimen_text_14"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_3"
+        android:text="@string/message_check_connection"
+        android:textSize="@dimen/dimen_text_14"
+    />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_18"
+        android:text="@string/retry"
+        android:textSize="@dimen/dimen_text_14"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_error"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/error_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_no_data_found" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_error_generic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/error_image"
+        android:text="@string/message_general_error"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/dimen_text_14"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_error_generic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_3"
+        android:text="@string/try_again"
+        android:textSize="@dimen/dimen_text_14" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_try_again"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_18"
+        android:text="@string/retry"
+        android:textSize="@dimen/dimen_text_14"
+        android:textStyle="bold" />
+
+</RelativeLayout>
