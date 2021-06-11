@@ -2,7 +2,7 @@ package com.starter.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.starter.helper.AppConstants
-import com.starter.network.RemoteDataClient
+import com.starter.network.HttpRequestInterceptor
 import com.starter.network.RemoteDataService
 import dagger.Module
 import dagger.Provides
@@ -22,7 +22,8 @@ object NetworkModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor())
+            .addInterceptor(HttpRequestInterceptor())
+            .addNetworkInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
             .build()
     }
 
@@ -44,9 +45,4 @@ object NetworkModule {
 
     }
 
-    @Provides
-    @Singleton
-    fun provideAppClient(service: RemoteDataService): RemoteDataClient {
-        return RemoteDataClient(service)
-    }
 }

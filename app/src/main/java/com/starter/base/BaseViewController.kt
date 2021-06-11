@@ -12,13 +12,11 @@ interface BaseViewController {
 
     fun showEmptyView(message: String?){}
 
-    fun showErrorView(){}
-
     fun onInvalidUserSession(){}
 
     fun showConnectionErrorView(){}
 
-    fun showErrorView(message: String?){}
+    fun showErrorView(message: String?= null){}
 
     fun showContent(){}
 

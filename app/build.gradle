@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -62,6 +66,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_gson_version"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_adapter_version"
 
+    //Room
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"

@@ -3,6 +3,7 @@ package com.starter.base
 import android.os.Bundle
 import android.view.View
 import android.view.ViewStub
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.starter.R
 import com.starter.extensions.gone
@@ -52,10 +53,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseLayout, BaseViewControlle
             connectionViewStub?.layoutResource = getConnectionErrorLayout()
         }
 
-        initView()
+        initView(mainContentView)
     }
 
-    abstract fun initView()
+    abstract fun initView(view: View?)
 
     override fun showLoadingView() {
         if (loadingView == null) {
@@ -68,6 +69,9 @@ abstract class BaseActivity : AppCompatActivity(), BaseLayout, BaseViewControlle
         loadingView?.visible()
     }
 
+    override fun hideLoadingView() {
+        showContent()
+    }
     override fun showEmptyView() {
         if (emptyView == null) {
             emptyView = emptyViewStub!!.inflate()
@@ -94,7 +98,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseLayout, BaseViewControlle
 
     }
 
-    override fun showErrorView() {
+    override fun showErrorView(message: String?) {
         if (errorView == null) {
             errorView = errorViewStub!!.inflate()
         }
@@ -102,6 +106,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseLayout, BaseViewControlle
         if (emptyView != null) emptyView?.gone()
         if (mainContentView != null) mainContentView?.gone()
         errorView?.visible()
+        errorView?.findViewById<TextView>(R.id.tv_error_generic)?.text = message
+        errorView?.findViewById<TextView>(R.id.tv_retry)?.setOnClickListener{retry()}
 
     }
 

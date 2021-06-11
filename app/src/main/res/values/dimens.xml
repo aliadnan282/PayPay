@@ -4,4 +4,5 @@
     <dimen name="dimen_text_14">14sp</dimen>
     <dimen name="dimen_3">3dp</dimen>
     <dimen name="dimen_18">18dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
 </resources>
