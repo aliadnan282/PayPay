@@ -16,7 +16,7 @@ import kotlinx.coroutines.async
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class CurrencyViewModel @Inject constructor(
     private var repository: AppRepository,
     private val preferences: AppPreferences
 ) : ViewModel() {

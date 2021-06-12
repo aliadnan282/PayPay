@@ -16,7 +16,7 @@ android {
         versionCode versionCode
         versionName versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.starter.view.activity.AppTestRunner"
     }
 
     buildTypes {
@@ -83,19 +83,21 @@ dependencies {
     // Async threading
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Unit testing
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "androidx.test:core:$core_test"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
 
-
-    // Core Test
-    androidTestImplementation "androidx.test:core:$core_test"
-    androidTestImplementation "androidx.test:rules:$rules_test"
-    androidTestImplementation "android.arch.core:core-testing:$arch_core_test"
+    // Instrumentation Testing
+    androidTestImplementation "com.google.truth:truth:$truthVersion"
     androidTestImplementation "androidx.test.ext:junit:$jnit_ext_test_version"
-
-    // UI Testing
-    kaptAndroidTest "com.android.databinding:compiler:$databinding_test"
-    androidTestImplementation "androidx.fragment:fragment-testing:$fragment_test"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_core"
     debugImplementation "androidx.test.espresso:espresso-idling-resource:$espresso_core"
+
+    // Mocking
+
 }

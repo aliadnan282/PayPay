@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+
     tools:context=".view.activity.MainActivity">
 
     <EditText
@@ -22,14 +25,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-
         android:id="@+id/sp_currency"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_50" />
+        android:layout_height="@dimen/dimen_50"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_currency"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f1f1f1"
         tools:listitem="@layout/item_currency_rate"
         tools:layoutManager ="androidx.recyclerview.widget.GridLayoutManager"
         tools:spanCount="3"/>

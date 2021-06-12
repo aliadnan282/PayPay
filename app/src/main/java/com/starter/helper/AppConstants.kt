@@ -5,5 +5,5 @@ object AppConstants {
     val SHARED_PREFERENCE_NAME = "currency_preferences"
     val DATABASE_NAME = "currency_db"
     val BASE_URL = "http://api.currencylayer.com/"
-    val ACCESS_KEY = "967fc9f2948b75041ddff883abdba488"
+    val ACCESS_KEY = "6572e2b6de06df87beb173abcbeff0a7"
 }
