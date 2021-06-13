@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.paypay.database.entity.Currency
 import com.paypay.databinding.ItemCurrencyRateBinding
+import com.paypay.extensions.getFlagResource
 
 class CurrencyAdapter(
     private var currencyList: List<Currency>? = listOf(),

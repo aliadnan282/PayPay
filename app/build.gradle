@@ -10,13 +10,13 @@ android {
     compileSdkVersion compileSdkV
 
     defaultConfig {
-        applicationId "com.starter"
+        applicationId "com.paypay"
         minSdkVersion minSdkV
         targetSdkVersion targetSdk
         versionCode versionCode
         versionName versionName
 
-        testInstrumentationRunner "com.starter.view.activity.AppTestRunner"
+        testInstrumentationRunner "com.paypay.view.activity.AppTestRunner"
     }
 
     buildTypes {

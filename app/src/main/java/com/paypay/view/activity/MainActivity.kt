@@ -11,6 +11,7 @@ import com.paypay.R
 import com.paypay.base.BaseActivity
 import com.paypay.database.entity.Currency
 import com.paypay.databinding.ActivityMainBinding
+import com.paypay.extensions.afterTextChange
 import com.paypay.model.ResponseState
 import com.paypay.view.adapter.CurrencyAdapter
 import com.paypay.view.adapter.SpinnerAdapter
@@ -33,13 +34,13 @@ class MainActivity : BaseActivity() {
 
     override fun initView(view: View?) {
         binding = DataBindingUtil.bind(view!!)
-        binding?.etCurrency?.afterTextChange { 
+        binding?.etCurrency?.afterTextChange {
             val amount = it?.toDouble() ?: 0.0
-//            viewModel.
+            currencyAdapter?.convert(amount)
         }
 
-        currencyAdapter = CurrencyAdapter{}
-        binding?.rvCurrency?.apply { 
+        currencyAdapter = CurrencyAdapter {}
+        binding?.rvCurrency?.apply {
             layoutManager = GridLayoutManager(context, 3)
             adapter = currencyAdapter
         }
@@ -61,7 +62,7 @@ class MainActivity : BaseActivity() {
             }
 
         // Database Response observer
-        dbObserver  =  Observer {
+        dbObserver = Observer {
             when (it) {
                 is ResponseState.Loading -> {
 
@@ -77,7 +78,7 @@ class MainActivity : BaseActivity() {
         }
 
         // Network response observer
-        responseObserver  =  Observer {
+        responseObserver = Observer {
             when (it) {
                 is ResponseState.Loading -> {
                     showLoadingView()
