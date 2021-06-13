@@ -25,7 +25,7 @@ class MainViewModelTest {
     val coroutineRule = MainCoroutinesRule()
 
     @Before
-    fun initRepository(){
+    fun initRepository() {
         appRepository = AppRepository(remoteDataService, currencyDao)
         viewModel = CurrencyViewModel(appRepository, appPreferences)
     }

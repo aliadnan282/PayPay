@@ -41,9 +41,8 @@ class CurrencyViewModel @Inject constructor(
             }
         } catch (exception: Exception) {
             // Mostly this error thrown, that's why hardcode this text here, otherwise I have added ErrorResponse model
-                // Note: --> in case error is continuously coming you can check logcate
+            // Note: --> in case error is continuously coming you can check logcate
             emit(ResponseState.Error("You have exceeded the maximum rate limitation allowed on your subscription plan. Please refer to the \\\"Rate Limits\\\" section of the API Documentation for details."))
-
         }
     }
 

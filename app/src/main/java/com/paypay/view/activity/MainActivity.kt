@@ -11,7 +11,7 @@ import com.paypay.R
 import com.paypay.base.BaseActivity
 import com.paypay.database.entity.Currency
 import com.paypay.databinding.ActivityMainBinding
-import com.paypay.extensions.afterTextChange
+import com.paypay.extensions.afterTextChanged
 import com.paypay.model.ResponseState
 import com.paypay.view.adapter.CurrencyAdapter
 import com.paypay.view.adapter.SpinnerAdapter
@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
 
     override fun initView(view: View?) {
         binding = DataBindingUtil.bind(view!!)
-        binding?.etCurrency?.afterTextChange {
+        binding?.etCurrency?.afterTextChanged {
             val amount = it?.toDouble() ?: 0.0
             currencyAdapter?.convert(amount)
         }

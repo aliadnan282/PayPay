@@ -21,20 +21,21 @@ fun View.invisible(){
     visibility = View.INVISIBLE
 }
 
-fun EditText.afterTextChange(call: (String?)-> Unit )= object :TextWatcher{
-    override fun afterTextChanged(text: Editable?) {
-        if (!text.toString().isNullOrEmpty())
-        call.invoke(text.toString())
-    }
+fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+    this.addTextChangedListener(object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
 
-    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-        TODO("Not yet implemented")
-    }
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
 
-    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-        TODO("Not yet implemented")
-    }
+        override fun afterTextChanged(editable: Editable?) {
+            if (!text.toString().isNullOrEmpty())
+            afterTextChanged.invoke(editable.toString())
+        }
+    })
 }
+
 
 fun Resources.getFlagResource(flagName: String): Int {
     val id = getIdentifier(
