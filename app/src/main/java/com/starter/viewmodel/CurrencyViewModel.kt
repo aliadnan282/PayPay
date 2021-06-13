@@ -24,9 +24,9 @@ class CurrencyViewModel @Inject constructor(
     fun getCurrencyData() = liveData(Dispatchers.IO) {
         emit(ResponseState.Loading(true))
         try {
-            val period = 30 * 60 * 1000
+
             if ((preferences.getLong(AppConstants.TIME_STAMP)
-                    .plus(period)) > getCurrentTimeStampInMillis()
+                    .plus(AppConstants.MINUTE_30)) > getCurrentTimeStampInMillis()
             ) {
                 emit(ResponseState.Success(data = repository.getSavedExchangeRates()))
             } else {

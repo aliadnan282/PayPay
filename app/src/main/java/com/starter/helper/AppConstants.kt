@@ -1,6 +1,7 @@
 package com.starter.helper
 
 object AppConstants {
+    val MINUTE_30: Long = 30 * 60 * 1000
     val TIME_STAMP: String = "time_stamp"
     val SHARED_PREFERENCE_NAME = "currency_preferences"
     val DATABASE_NAME = "currency_db"
