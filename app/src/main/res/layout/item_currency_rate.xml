@@ -3,7 +3,7 @@
 <data>
     <variable
         name="currency"
-        type="com.starter.database.entity.Currency" />
+        type="com.paypay.database.entity.Currency" />
 </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
